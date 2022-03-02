@@ -54,10 +54,11 @@ function catsReducer(state = initialState, action) {
 
     // async actions
     case "cats/fetchCats/pending":
-      return {
-        ...state,
-        status: "loading",
-      };
+      // return {
+      // ...state,
+      state.status = "loading";
+      return state;
+    // };
     case "cats/fetchCats/fulfilled":
       return {
         ...state,
